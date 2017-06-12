@@ -1,7 +1,7 @@
 'use strict';
 
 var API_KEY = window.GoogleSamples.Config.gcmAPIKey;
-var GCM_ENDPOINT = 'https://android.googleapis.com/gcm/send';
+var GCM_ENDPOINT = 'https://fcm.googleapis.com/fcm/send';
 
 var curlCommandDiv = document.querySelector('.js-curl-command');
 var isPushEnabled = false;
@@ -11,7 +11,7 @@ var isPushEnabled = false;
 // to the subscription endpoint
 function endpointWorkaround(pushSubscription) {
   // Make sure we only mess with GCM
-  if (pushSubscription.endpoint.indexOf('https://android.googleapis.com/gcm/send') !== 0) {
+  if (pushSubscription.endpoint.indexOf('https://fcm.googleapis.com/fcm/send') !== 0) {
     return pushSubscription.endpoint;
   }
 
