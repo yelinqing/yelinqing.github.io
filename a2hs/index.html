@@ -48,10 +48,11 @@ limitations under the License.
     <script type="text/javascript">
         function browser(){
             var myurl = document.getElementById("url").value;
-            if (myurl.indexOf("http://") > 0 || myurl.indexOf("https://") > 0){
+            if (myurl.indexOf("http://") >= 0 || myurl.indexOf("https://") >= 0){
+                
                 location.href=myurl;
             } else {
-                location.href = "http://"+myurl;
+                location.href = 'http://'+myurl;
             }
         }
 
