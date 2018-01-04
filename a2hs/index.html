@@ -45,15 +45,28 @@ limitations under the License.
     <!-- Include manifest file in the page -->
     <link rel="manifest" href="manifest.json">
 
+    <script type="text/javascript">
+        function browser(){
+            var myurl = document.getElementById("url").value;
+            if (myurl.indexOf("http://") > 0 || myurl.indexOf("https://") > 0){
+                location.href=myurl;
+            } else {
+                location.href = "http://"+myurl;
+            }
+        }
+
+    </script>
+
   </head>
 
   <body>
-    <h1>add to homescreen testpage</h1>
-
+    <h1>A2HS TEST</h1>
+    <p> <input type="text" name="url" id="url" /> <input type="button" name="btn" value="浏览"  onclick="browser()" /> </p>
     <p><a href="https://uctest.ucweb.com/guofy/param.php?uc_param_str=giwidnfrpfbivesspicpmioslabtbmprpvntchnisieijblisvkt">uc_param_str公参 </a></p>
     <p> <a href="http://debug.ucweb.com/ucm/test/bs/">黑天鹅</a> </p>
     <p> <a href="http://uctest.ucweb.com:81/dengzd/video/">视频测试页面 </a> </p>
     <p> <a href="http://uctest.ucweb.com:81/huangdl/RenderTest/">渲染测试页面 </a> </p>
+
     <br />
     <br />
  <script src="main.js"></script>
