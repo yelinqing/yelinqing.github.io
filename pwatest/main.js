@@ -59,7 +59,7 @@ function sendSubscriptionToServer(subscription) {
   // This is just for demo purposes / an easy to test by
   // generating the appropriate cURL command
   // showCurlCommand(mergedEndpoint);
-  showEndpiont(mergedEndpoint);
+  showEndpiont(subscription);
 }
 
 
