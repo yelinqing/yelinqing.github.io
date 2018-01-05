@@ -28,9 +28,9 @@ function urlB64ToUint8Array(base64String) {
 // to the subscription endpoint
 function endpointWorkaround(pushSubscription) {
   // Make sure we only mess with GCM
-  if (pushSubscription.endpoint.indexOf('https://fcm.googleapis.com/fcm/send') !== 0) {
-    return pushSubscription.endpoint;
-  }
+  // if (pushSubscription.endpoint.indexOf('https://fcm.googleapis.com/fcm/send') !== 0) {
+  //   return pushSubscription.endpoint;
+  // }
 
   var mergedEndpoint = pushSubscription.endpoint;
   // Chrome 42 + 43 will not have the subscriptionId attached
@@ -53,8 +53,8 @@ function sendSubscriptionToServer(subscription) {
   // endpointWorkaround(subscription)
   console.log('TODO: Implement sendSubscriptionToServer()');
 
-  // var mergedEndpoint = endpointWorkaround(subscription);
-  var mergedEndpoint = subscription.endpoint;
+  var mergedEndpoint = endpointWorkaround(subscription);
+  // var mergedEndpoint = subscription.endpoint;
   // This is just for demo purposes / an easy to test by
   // generating the appropriate cURL command
   showCurlCommand(mergedEndpoint);
