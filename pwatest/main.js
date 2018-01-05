@@ -142,6 +142,7 @@ function subscribe() {
 
     })
       .then(function(subscription) {
+        console.log(subscription);
         // The subscription was successful
         isPushEnabled = true;
         pushButton.textContent = 'Disable Push Messages';
