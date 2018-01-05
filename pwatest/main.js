@@ -58,7 +58,15 @@ function sendSubscriptionToServer(subscription) {
   // var mergedEndpoint = subscription.endpoint;
   // This is just for demo purposes / an easy to test by
   // generating the appropriate cURL command
-  showCurlCommand(mergedEndpoint);
+  // showCurlCommand(mergedEndpoint);
+  showEndpiont(mergedEndpoint);
+}
+
+
+function showEndpiont(mergedEndpoint) {
+
+    curlCommandDiv.textContent =  JSON.stringify(mergedEndpoint.toJSON());
+
 }
 
 // NOTE: This code is only suitable for GCM endpoints,
