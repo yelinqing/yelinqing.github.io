@@ -53,7 +53,8 @@ function sendSubscriptionToServer(subscription) {
   // endpointWorkaround(subscription)
   console.log('TODO: Implement sendSubscriptionToServer()');
 
-  var mergedEndpoint = endpointWorkaround(subscription);
+  var mergedEndpoint = subscription;
+  // var mergedEndpoint = endpointWorkaround(subscription);
   // var mergedEndpoint = subscription.endpoint;
   // This is just for demo purposes / an easy to test by
   // generating the appropriate cURL command
@@ -71,10 +72,11 @@ function showCurlCommand(mergedEndpoint) {
   //   return;
   // }
 
-  var endpointSections = mergedEndpoint.split('/');
-  var subscriptionId = endpointSections[endpointSections.length - 1];
-  GCM_ENDPOINT = endpointSections[endpointSections.length - 2];
-  alert(mergedEndpoint);
+  // var endpointSections = mergedEndpoint.split('/');
+  // var subscriptionId = endpointSections[endpointSections.length - 1];
+  var subscriptionId = mergedEndpoint.subscriptionId;
+  GCM_ENDPOINT = mergedEndpoint.endpoint;
+  // alert(mergedEndpoint);
   var curlCommand = 'curl --header "Authorization: key=' + API_KEY +
     '" --header Content-Type:"application/json" ' + GCM_ENDPOINT +
     ' -d "{\\"registration_ids\\":[\\"' + subscriptionId + '\\"]}"';
