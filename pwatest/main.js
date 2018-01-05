@@ -72,10 +72,9 @@ function showCurlCommand(mergedEndpoint) {
   //   return;
   // }
 
-  // var endpointSections = mergedEndpoint.split('/');
-  // var subscriptionId = endpointSections[endpointSections.length - 1];
-  var subscriptionId = mergedEndpoint.subscriptionId;
-  GCM_ENDPOINT = mergedEndpoint.endpoint;
+  var endpointSections = mergedEndpoint.split('/');
+  var subscriptionId = endpointSections[endpointSections.length - 1];
+  GCM_ENDPOINT = endpointSections[0,endpointSections.length - 2];
   // alert(mergedEndpoint);
   var curlCommand = 'curl --header "Authorization: key=' + API_KEY +
     '" --header Content-Type:"application/json" ' + GCM_ENDPOINT +
