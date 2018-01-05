@@ -65,15 +65,15 @@ function sendSubscriptionToServer(subscription) {
 // this to send a PUSH request directly to the endpoint
 function showCurlCommand(mergedEndpoint) {
   // The curl command to trigger a push message straight from GCM
-  if (mergedEndpoint.indexOf(GCM_ENDPOINT) !== 0) {
-    window.Demo.debug.log('This browser isn\'t currently ' +
-      'supported for this demo');
-    return;
-  }
+  // if (mergedEndpoint.indexOf(GCM_ENDPOINT) !== 0) {
+  //   window.Demo.debug.log('This browser isn\'t currently ' +
+  //     'supported for this demo');
+  //   return;
+  // }
 
   var endpointSections = mergedEndpoint.split('/');
   var subscriptionId = endpointSections[endpointSections.length - 1];
-
+  GCM_ENDPOINT = endpointSections[0];
   var curlCommand = 'curl --header "Authorization: key=' + API_KEY +
     '" --header Content-Type:"application/json" ' + GCM_ENDPOINT +
     ' -d "{\\"registration_ids\\":[\\"' + subscriptionId + '\\"]}"';
