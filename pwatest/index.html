@@ -97,6 +97,14 @@
  <script src="config.js"></script>
  <script src="main.js"></script>
  <script src="demo.js"></script>
+ <script type="text/javascript">
+     
+     window.addEventListener('beforeinstallprompt', function(event) {
+  console.log('beforeinstallprompt Event fired');
+  event.preventDefault();
+  return false
+});
+ </script>
    
   </body>
 </html>

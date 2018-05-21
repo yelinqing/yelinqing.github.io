@@ -45,6 +45,5 @@ self.addEventListener('notificationclick', function(event) {
 self.addEventListener('beforeinstallprompt', function(event) {
   console.log('beforeinstallprompt Event fired');
   event.preventDefault();
-  // deferredPrompt = event;
   return false
 });
