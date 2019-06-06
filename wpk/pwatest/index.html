@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="description" content="Sample illustrating the use of Push Messaging and Notifications.">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>PWA Push &amp; A2HS TEST</title>
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="../images/touch/chrome-touch-icon-192x192.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-title" content="Push Messaging and Notifications Sample">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" href="../images/apple-touch-icon-precomposed.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#3372DF">
+
+    <link rel="icon" href="../images/favicon.ico">
+
+    <!-- Include manifest file in the page -->
+    <link rel="manifest" href="manifest.json">
+
+    <script type="text/javascript">
+        function browser(){
+            var myurl = document.getElementById("url").value;
+            if (myurl.indexOf("http://") >= 0 || myurl.indexOf("https://") >= 0){
+                
+                location.href=myurl;
+            } else {
+                location.href = 'http://'+myurl;
+            }
+        }
+
+    </script>
+
+  </head>
+
+  <body>
+    <h1>PWA TEST</h1>
+    <p style="width: 100%"> <input style="width: 80%" type="text" placeholder="输入网址" name="url" id="url" /> <input type="button" name="btn" value="浏览"  onclick="browser()" /> </p>
+
+    <h2> Add To Homescreen</h2>
+    <p><a href="https://uctest.ucweb.com/guofy/param.php?uc_param_str=giwidnfrpfbivesspicpmioslabtbmprpvntchnisieijblisvkt">uc_param_str公参 </a></p>
+    <p> <a href="http://debug.ucweb.com/ucm/test/bs/">黑天鹅</a> </p>
+    <p> <a href="http://uctest.ucweb.com:81/dengzd/video/">视频测试页面 </a> </p>
+    <p> <a href="http://uctest.ucweb.com:81/huangdl/RenderTest/">渲染测试页面 </a> </p>
+    <p> <a href="http://100.84.42.129/testpage/cr57/feature/layout/">排版测试页面 </a></p>
+
+    <h2>Push Notification </h2>
+     <p>
+        <button class="js-push-button" disabled>
+          Enable Push Messages
+        </button>
+    </p>
+
+    <h3>Send Push Subscribtion</h3>
+    <div class="js-curl-command"></div>
+    <div> <a href="https://web-push-codelab.glitch.me/">发送页面</a></div>
+
+    <p> <a href="https://ninjakoders.github.io/sample/gcm-push-demo/"> gcm push(仅国际版支持)</a> </p>
+    <p> <a href="https://gauntface.github.io/simple-push-demo/" >web push </a> </p>
+    <p> <a href="https://tests.peter.sh/notification-generator/" > Notification样式生成</a> </p>
+
+    <h2>线上站点</h2>
+    <p> <a href="https://weatherpwa.baidu.com">百度天气(a2hs)</a> </p>
+    <p> <a href="https://m.douban.com">豆瓣(a2hs)</a> </p>
+    <p> <a href="https://m.ele.me">饿了么(a2hs)</a> </p>
+    <p> <a href="https://m.pp.cn">PP(a2hs)</a> </p>
+    <p> <a href="https://xw.qq.com">腾讯新闻</a> </p>
+    <p> <a href="https://www.9apps.com">9apps(a2hs)</a></p>
+
+    <h2>国际push站点</h2>
+    <p> <a href="https://m.jabong.com/">m.jabong.com</a></p>
+    <p> <a href="https://m.cnnindonesia.com/">https://m.cnnindonesia.com/</a></p>
+    <p> <a href="https://smo.shopclues.com/">https://smo.shopclues.com/</a></p>
+    <p> <a href="https://www.zigwheels.com/">https://www.zigwheels.com/</a></p>
+    <p> <a href="https://www.cardekho.com/">https://www.cardekho.com/</a></p>
+    <p> <a href="https://www.bikedekho.com/">https://www.bikedekho.com/</a></p>
+    <p> <a href="https://www.filmibeat.com/">https://www.filmibeat.com/</a></p>
+    <p> <a href="https://autoportal.com/">https://autoportal.com/</a></p>
+    <p> <a href="https://www.boredpanda.com/">https://www.boredpanda.com/</a></p>
+    <p> <a href="https://www.filmywap.com/">https://www.filmywap.com/</a></p>
+    <p> <a href="https://gaana.com/">https://gaana.com/</a></p>
+
+    <br />
+
+ <script src="config.js"></script>
+ <script src="main.js"></script>
+ <script src="demo.js"></script>
+ <script type="text/javascript">
+     
+     window.addEventListener('beforeinstallprompt', function(event) {
+  console.log('beforeinstallprompt Event fired');
+  event.preventDefault();
+  return false
+});
+ </script>
+   
+  </body>
+</html>
