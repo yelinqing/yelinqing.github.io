@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="wpk-bid" content="wpktest">
+    <meta name="wpk-rel" content="v11.22.33">
+</head>
+<body>
+
+<div id="demo"><input type="button" onclick="finishLoading()">clear_report</input></div>
+
+<script>
+//document.reportCustomEmptyScreen("anything:that\"page\"~may apply");
+var t;
+window.onload = function() {
+	t = setTimeout("document.reportCustomEmptyScreen('123')", 5000);
+}
+// 页面真正的内容加载出来后调用
+function finishLoading() {
+    clearTimeout(t);
+}
+</script>
+
+</body>
+</html>
